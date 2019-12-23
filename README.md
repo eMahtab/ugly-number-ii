@@ -48,5 +48,48 @@ public static int nthUglyNumber(int n) {
 		}
 
 		return list.get(list.size() - 1);
-	}
+}
+```
+
+### Code execution :
+```
+initialize
+   list =  [ 1 ]
+   i =  j = k = 0;
+
+First iteration
+   list[1] = Min(list[i]*2, list[j]*3, list[k]*5)
+           = Min(2, 3, 5)
+           = 2
+   list    = [ 1 , 2 ]
+   i = 1,  j = k = 0  (i got incremented ) 
+
+Second iteration
+   list[2] = Min(list[i]*2, list[j]*3, list[k]*5)
+           = Min(4, 3, 5)
+           = 3
+   list    = [ 1 , 2 , 3 ]
+   i = 1,  j =  1, k = 0  (j got incremented ) 
+
+Third iteration
+   list[3] = Min(list[i]*2, list[j]*3, list[k]*5)
+           = Min(4, 6, 5)
+           = 4
+   list    = [ 1 , 2 , 3 ,  4 ]
+   i = 2,  j =  1, k = 0  (i got incremented )
+
+Fourth iteration
+    list[4] = Min(list[i]*2, list[j]*3, list[k]*5)
+            = Min(6, 6, 5)
+            = 5
+    list    = [ 1 , 2 , 3 ,  4 , 5 ]
+    i = 2,  j =  1, k = 1  (k got incremented )
+
+Fifth iteration
+    list[5] = Min(list[i]*2, list[j]*3, list[k]*5)
+            = Min(6, 6, 10)
+            = 6
+    list    = [ 1 , 2 , 3 ,  4 , 5 , 6 ]
+    i = 3,  j =  2, k = 1  (i and j got incremented )
+
 ```
